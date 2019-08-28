@@ -1,0 +1,208 @@
+
+@font-face {
+    font-family: "Roboto Light";
+    src: url("../fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: "Roboto Thin";
+    src: url("../fonts/Roboto-Thin.ttf");
+}
+
+@font-face {
+    font-family: "Roboto Bold";
+    src: url("../fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Roboto Italic";
+    src: url("../fonts/Roboto-RegularItalic.ttf");
+}
+
+body{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    color: #fff;
+
+
+    position: relative;
+    background:#34495e;
+    transform: translateX(0px);
+    transition: transform 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/*----------------- button ---------*/
+.button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10000;
+    background:transparent;
+    width:50px;
+    height:40px;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.button:hover{
+    cursor:pointer;
+}
+
+.button > .line{
+    display:block;
+    width:80%;
+    height:2px;
+    background:#fff;
+    margin:8px auto;
+}
+
+.button .line:nth-child(1), .button .line:nth-child(3){
+    transform:rotate(0deg) translateY(0);
+    transition:all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.button .line:nth-child(2){
+    transform:translateX(0);
+    transition:all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+.close .line:nth-child(1) {
+    transform:rotate(45deg) translateY(15px);
+
+}
+
+.close .line:nth-child(3) {
+    transform:rotate(-45deg) translateY(-15px);
+}
+
+.close .line:nth-child(2){
+    transform:translateX(-100px);
+}
+
+
+/*---------------- menu -----------*/
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    height:800px;
+    overflow:hidden;
+    padding-left: 0;
+    transform: translateX(-150%);
+    transition: transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition-delay: .1s;
+}
+
+.logo {
+    margin: 0;
+}
+
+.menu nav ul {
+    margin: 0;
+    padding: 20px 0;
+    list-style: none;
+}
+
+.menu nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.menu nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 20px 25px;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: linear-gradient(to bottom, rgba(51, 59, 63, 1) 0%, rgba(50, 58, 62, 1) 11%, rgba(46, 54, 58, 1) 92%, rgba(46, 54, 58, 1) 100%);
+    border-bottom: 1px solid #293034;
+    font-size: 15px;
+    font-family: 'Roboto Light', 'sans-serif';
+    text-align: right;
+}
+
+.menu nav ul li a:hover{
+    background: linear-gradient(to bottom, rgba(49,188,186,1) 0%, rgba(46,185,183,1) 11%, rgba(26,165,163,1) 92%, rgba(24,163,161,1) 100%);
+}
+
+body.nav_is_visible {
+    transform: translateX(300px);
+}
+
+body.nav_is_visible .menu {
+    transform: translateX(-100%);
+}
+
+.content {
+    position: absolute;
+    margin: 0 auto;
+    padding: 30px 20%;
+    font-size: 18px;
+    transform: translateX(100%);
+    transition: color 1s ease 1s, background 0.5s ease 1s, transform 1000ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s;
+}
+
+.content  h1 {
+    font-size: 60px;
+}
+
+.content  p {
+    margin-bottom: 50px;
+    line-height: 1.4;
+    font-size: 17px;
+}
+
+.content .wrapper{
+
+    transform:translateX(300%);
+    transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.home_is_visible .home .wrapper,
+.aboutus_is_visible .aboutus .wrapper,
+.clients_is_visible .clients .wrapper,
+.contactus_is_visible .contactus .wrapper{
+    transform:translateX(0);
+}
+
+
+.home_is_visible .home,
+.aboutus_is_visible .aboutus, .clients_is_visible .clients, .contactus_is_visible .contactus {
+    transform: translateX(0);
+    z-index:5000;
+}
+
+
+.home_is_visible .home {
+    color: white;
+    background: #ff9800;
+}
+
+
+.aboutus_is_visible .aboutus {
+    color: white;
+    background: #9c27b0;
+}
+
+
+.clients_is_visible .clients {
+    color: white;
+    background: #ff5722;
+}
+
+.contactus_is_visible .contactus {
+    color: white;
+    background: #3f51b5;
+}
